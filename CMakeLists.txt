@@ -108,7 +108,7 @@ add_custom_command(
     TARGET ${PYTHON_TARGET}
     POST_BUILD
     COMMAND
-        bash -c "cp -r $(cat pybuilddir.txt) ${PYTHON_NATIVE_LIB_DIR}"
+        bash -c "cp -rL $(cat pybuilddir.txt) ${PYTHON_NATIVE_LIB_DIR}"
     COMMENT "Copying the interpreter's native libraries to ${CPYTHON_SRC_DIR}/${PYTHON_NATIVE_LIB_DIR}"
     WORKING_DIRECTORY ${CPYTHON_SRC_DIR}
     VERBATIM
